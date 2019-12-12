@@ -1,0 +1,39 @@
+#eureka-server application.yml file 
+#Application Name
+spring:
+  application:
+    name: eureka-server
+
+#Eureka Server Details
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  #Server time out details
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+  instance:
+    prefer-ip-address: true
+
+#Zuul Details
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    employee-db:
+      path: /employee-db/**
+      url: http://localhost:8081
+    emp-service:
+      path: /emp-service/**
+      url: http://localhost:8082
+
+# Increase the Hystrix timeout to 60s (globally)
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
