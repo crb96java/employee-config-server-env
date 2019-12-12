@@ -1,0 +1,19 @@
+#emp-service application.yml file details
+#Application Name
+spring:
+  application:
+    name: emp-service
+
+#Server Details
+server:
+  port: 8082
+
+#Eureka Server Details
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    hostname: localhost
