@@ -1,0 +1,32 @@
+#employee-db application.yml file details
+#Application Name
+spring:
+  application:
+    name: employee-db
+
+#JDBC Connection details
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/microservice
+    username: root
+    password: root
+
+#JPA Details
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+#Server Details
+server:
+  port: 8081
+
+#Eureka Server Details
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  instance:
+    hostname: localhost
