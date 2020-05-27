@@ -1,1 +1,4 @@
 #application.yml
+employee:
+  details:
+    url: http://localhost:8070/emp/get-emp-details
