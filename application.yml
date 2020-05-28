@@ -2,7 +2,5 @@
 employee:
   details:
     url: http://localhost:8070/emp/get-emp-details
-employee:
-  details:
     service:
       url: http://localhost:1113/emp/get-emp-details
